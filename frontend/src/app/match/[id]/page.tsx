@@ -32,7 +32,7 @@ export default function MatchPage() {
     // Fetch match details
     axios
       .get(`http://localhost:4000/matches/${id}`)
-      .then((res) => setMatch(res.data.match))
+      .then((res) => {setMatch(res.data.match); setCommentary(res.data.commentary)})
       .catch((err) => console.error("Error fetching match:", err));
 
     // Socket connection

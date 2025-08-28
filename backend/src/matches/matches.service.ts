@@ -29,4 +29,8 @@ export class MatchesService {
     const commentary = await this.commentaryModel.find({ matchId });
     return { match, commentary };
   }
+  
+  async getAllMatches() {
+    return this.matchModel.find().exec();
+  }
 }
